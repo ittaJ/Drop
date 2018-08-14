@@ -5,13 +5,12 @@ class Stone_Drop
   attr_reader :dropChance
   attr_reader :item
   attr_reader :whatCanMine
+  attr_reader :isExp
   
-  #whatCanMine - id of item with which you can mine this item
-  #chance - on what chance it will drop
-  #item - id of item which will drop
-  def initialize(whatCanMine, chance, item, blockId)
+  def initialize(whatCanMine, chance, isExp, item, blockId)
     @whatCanMine = whatCanMine
     @dropChance = chance
+    @isExp = isExp
     @item = item
     Block.get(blockId).addDrop(self)
   end
